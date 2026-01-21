@@ -43,19 +43,20 @@ CORS: Xử lý bảo mật chia sẻ tài nguyên.
 📂 Cấu trúc dự án
 
 BAITHUCTAP/
-├── backend/                # Chứa mã nguồn Server API
-│   ├── src/models/         # Định nghĩa Schema (User, Student, Grade...)
-│   ├── index.js            # File khởi chạy Server chính
-│   ├── migrate.js          # Script chuyển đổi dữ liệu từ SQL -> MongoDB
-│   └── qlsv.sql            # File dữ liệu nguồn (SQL Dump)
+├── backend/                # SERVER API (Node.js)
+│   ├── src/
+│   │   └── models/         # Cấu trúc dữ liệu (Schema)
+│   ├── index.js            # File chạy Server chính
+│   ├── migrate.js          # Script chuyển đổi dữ liệu SQL -> Mongo
+│   └── qlsv.sql            # Dữ liệu nguồn
 │
-└── frontend/               # Chứa mã nguồn Giao diện Web
+└── frontend/               # GIAO DIỆN WEB (ReactJS)
     ├── src/
-    │   ├── AdminDashboard.tsx      # Trang quản trị viên
-    │   ├── TeacherDashboard.tsx    # Trang giáo viên (Nhập điểm)
-    │   ├── StudentDashboard.tsx    # Trang sinh viên (Xem điểm, Chatbot)
-    │   ├── Login.tsx               # Trang đăng nhập
-    │   └── App.tsx                 # Cấu hình Routing
+    │   ├── AdminDashboard.tsx      # Trang Admin (Quản lý SV, Lớp, Môn)
+    │   ├── TeacherDashboard.tsx    # Trang Giáo viên (Nhập điểm)
+    │   ├── StudentDashboard.tsx    # Trang Sinh viên (Xem điểm, Chatbot)
+    │   ├── Login.tsx               # Trang Đăng nhập
+    │   └── App.tsx                 # Cấu hình đường dẫn (Routing)
     └── tailwind.config.js          # Cấu hình giao diện
 
 
@@ -73,7 +74,7 @@ Mở terminal tại thư mục backend:
 
 cd backend
 npm install
-npm install @google/generative-ai@latest  # Cài thư viện AI mới nhất
+npm install @google/generative-ai@latest  # Cài thư viện AI
 
 
 (Lần đầu tiên) Chạy script nạp dữ liệu vào Database:
